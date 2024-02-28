@@ -1,7 +1,7 @@
 image: gitpod/workspace-full-vnc
 
 tasks:
-- name: Download data
+- name: SETUP - Download data
   init: |
     cd /workspace
     curl -L "https://gitlab.com/wtsi-grit/rapid-curation/-/archive/main/rapid-curation-main.tar.gz?path=test_data" | tar xzf -
@@ -9,19 +9,19 @@ tasks:
     rmdir rapid-curation-main-test_data
     gunzip test_data/*.gz
     
-- name: Download PretextView
+- name: SETUP - Download PretextView
   init: |
     cd /workspace
     wget  https://github.com/wtsi-hpag/PretextView/releases/download/0.2.5/PretextView_Linux-x86-64.zip
     unzip PretextView_Linux-x86-64.zip
 
-- name: Download the rapid-curation scripts
+- name: SETUP - Download the rapid-curation scripts
   init: |
     cd /workspace
     wget  https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_split.pl \
           https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_join.pl
 
-- name: Download and set up agp2tpf script
+- name: PRETEXT-TO-AGP
   init: |
     cd /workspace
     git clone https://github.com/sanger-tol/agp-tpf-utils.git
@@ -34,7 +34,7 @@ tasks:
     pip install --upgrade pip
     pip install --editable .
     
-- name: Set-up mamba environment
+- name: MAIN - MAMBA ENVIRONMENT
   init: |
     cd /workspace
     wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
