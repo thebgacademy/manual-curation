@@ -56,7 +56,7 @@ tasks:
     echo "Welcome GRIT's curation tutorial"
     echo "typing './PretextView' will run PretextView - Remember to allow pop-ups!"
     echo "'ptt' is the alias for the pretext-to-tpf script!"
-    echo "---- Have Fun ----
+    echo "---- Have Fun ----"
 
 ports:
   - port: 5900
