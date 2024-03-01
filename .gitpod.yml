@@ -25,16 +25,13 @@ tasks:
   init: |
     cd /workspace
     git clone https://github.com/sanger-tol/agp-tpf-utils.git
-    cd agp-tpf-utils/
 
-    echo 'alias atu="cd /workspace/agp-tpf-utils && source ./venv/bin/activate"' >> ~/.bashrc
+    /workspace/mambaforge/bin/python3 -m pip install agp-tpf-utils/
+
+    echo 'alias pretext-to-agp="/workspace/mambaforge/bin/python3 agp-tpf-utils/src/tola/assembly/scripts/pretext_to_tpf.py"'
+
     
-    python3 -m venv --prompt asm-utils venv
-    source venv/bin/activate
-    pip install --upgrade pip
-    pip install --editable .
-    
-- name: MAIN - MAMBA ENVIRONMENT
+- name: MAMBA ENVIRONMENT
   init: |
     cd /workspace
     wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
@@ -42,8 +39,10 @@ tasks:
 
     /workspace/mambaforge/bin/mamba init bash
     source ${HOME}/.bashrc
-    mamba create -n rapid -c bioconda perl-bioperl seqtk pyfastaq -y
+    mamba create -n rapid -c bioconda perl-bioperl seqtk pyfastaq click ruff -y
 
+- name: Main Terminal
+  init: gp sync-await bundle # Wait for previous 'inits' to complete
   command: |
     cd /workspace
     chmod a+x *.pl *.py
@@ -78,3 +77,5 @@ github:
     addBadge: false
     # add a label once the prebuild is ready to pull requests (defaults to false)
     addLabel: prebuilt-in-gitpod
+
+
