@@ -21,12 +21,12 @@ tasks:
     wget  https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_split.pl \
           https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_join.pl
 
-- name: PRETEXT-TO-AGP
+- name: SETUP - PRETEXT-TO-AGP
   init: |
     cd /workspace
     git clone https://github.com/sanger-tol/agp-tpf-utils.git
 
-- name: MAMBA ENVIRONMENT
+- name: SETUP - MAMBA ENVIRONMENT
   init: |
     cd /workspace
     wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
@@ -37,7 +37,7 @@ tasks:
     mamba create -n rapid -c bioconda perl-bioperl seqtk pyfastaq -y &&
     gp sync-done bundle
 
-- name: Main Terminal
+- name: MAIN - TERMINAL TO USE
   # Installing click and ruff in the mamba environment didn't work for some reason
   # It is much easier to install via that mamba env's pip3
   # and then install pretext-to-tpf
@@ -53,6 +53,10 @@ tasks:
     /workspace/mambaforge/bin/python3 -m pip install agp-tpf-utils/
     export PATH=/workspace:$PATH
     clear
+    echo "Welcome GRIT's curation tutorial"
+    echo "typing './PretextView' will run PretextView - Remember to allow pop-ups!"
+    echo "'ptt' is the alias for the pretext-to-tpf script!"
+    echo "---- Have Fun ----
 
 ports:
   - port: 5900
