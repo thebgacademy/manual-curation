@@ -46,7 +46,7 @@ tasks:
     cd /workspace
     chmod a+x *.pl *.py
     /workspace/mambaforge/bin/mamba init bash
-    echo 'alias ptt="/workspace/mambaforge/bin/python3 /agp-tpf-utils/src/tola/assembly/scripts/pretext_to_tpf.py"'
+    echo 'alias ptt="/workspace/mambaforge/bin/python3 /agp-tpf-utils/src/tola/assembly/scripts/pretext_to_tpf.py"' >> ${HOME}/.bashrc
     source ${HOME}/.bashrc
     mamba activate rapid
     /workspace/mambaforge/bin/pip3 install click ruff
