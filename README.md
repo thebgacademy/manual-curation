@@ -2,6 +2,8 @@
 
 This session is part of [**Biodiversity Genomics Academy 2023**](https://BGA23.org)
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/thebgacademy/manual-curation)
+
 ## Session Leader(s)
 
 Genome Reference Informatics Team, Wellcome Sanger Institute
