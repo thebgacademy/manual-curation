@@ -37,10 +37,6 @@ tasks:
     mamba create -n rapid -c bioconda perl-bioperl seqtk pyfastaq -y &&
     gp sync-done bundle
 
-- name: SETUP - Open Tutorial Page
-  init: |
-    gp preview https://thebgacademy.org/BGA24/sessions/Genome-Curation
-
 - name: MAIN - TERMINAL TO USE
   # Installing click and ruff in the mamba environment didn't work for some reason
   # It is much easier to install via that mamba env's pip3
@@ -60,6 +56,7 @@ tasks:
     echo "Welcome GRIT's curation tutorial"
     echo "typing './PretextView' will run PretextView - Remember to allow pop-ups!"
     echo "'ptt' is the alias for the pretext-to-tpf script!"
+    echo " Run this for the tutorial: 'gp preview https://thebgacademy.org/BGA24/sessions/Genome-Curation'"
     echo "---- Have Fun ----"
 
 ports:
