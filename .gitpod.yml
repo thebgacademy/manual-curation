@@ -37,6 +37,10 @@ tasks:
     mamba create -n rapid -c bioconda perl-bioperl seqtk pyfastaq -y &&
     gp sync-done bundle
 
+- name: SETUP - Open Tutorial Page
+  init: |
+    gp preview https://thebgacademy.org/BGA24/sessions/Genome-Curation
+
 - name: MAIN - TERMINAL TO USE
   # Installing click and ruff in the mamba environment didn't work for some reason
   # It is much easier to install via that mamba env's pip3
