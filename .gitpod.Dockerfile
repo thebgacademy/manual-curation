@@ -11,7 +11,7 @@ RUN sudo apt-get update
 #
 # 3 - Download test data and unzip
 #
-ADD https://gitlab.com/wtsi-grit/rapid-curation/-/archive/main/rapid-curation-main.tar.gz?path=test_data ./test.tar.gz
+ADD https://gitlab.com/wtsi-grit/rapid-curation/-/archive/main/rapid-curation-main.tar.gz ./
 ADD https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_split.pl ./
 ADD https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_join.pl ./
 
