@@ -1,5 +1,5 @@
 from:
-  image: .gitpod.Dockerfile
+  file: .gitpod.Dockerfile
 
 ports:
   - port: 5900
