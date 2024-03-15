@@ -60,7 +60,7 @@ RUN echo 'alias ptt="/workspace/mambaforge/bin/python3 /workspace/agp-tpf-utils/
 
 RUN ["/bin/bash", "-c", "source /home/gitpod/.bashrc"]
 
-RUN mamba activate rapid
+RUN /workspace/mambaforge/bin/mamba activate rapid
 
 #
 # 8 - Install click and ruff for agp to tpf
