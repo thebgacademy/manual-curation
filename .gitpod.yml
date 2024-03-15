@@ -1,4 +1,4 @@
-from:
+image:
   file: .gitpod.Dockerfile
 
 ports:
