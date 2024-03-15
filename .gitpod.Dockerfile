@@ -61,23 +61,6 @@ RUN ["/bin/bash", "-c", "source /home/gitpod/.bashrc"]
 
 RUN /workspace/mambaforge/bin/mamba init
 
-RUN /workspace/mambaforge/bin/mamba activate rapid
-
-#
-# 8 - Install click and ruff for agp to tpf
-#
-RUN /workspace/mambaforge/bin/pip3 install click ruff
-
-#
-# 9 - Install agp to tpf (otherwise will not run)
-#
-RUN /workspace/mambaforge/bin/python3 -m pip install agp-tpf-utils/
-
-#
-# 10 - Add to PATH
-#
-RUN export PATH=/workspace:$PATH
-
 #
 # 11 - Print a welcome message
 #
