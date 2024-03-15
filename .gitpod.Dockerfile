@@ -43,8 +43,10 @@ RUN cd /workspace \
     && rm Mambaforge-$(uname)-$(uname -m).sh
 
 RUN cd /workspace \
-    && /workspace/mambaforge/bin/mamba init bash \
-    && source ~./bashrc \
+    && /workspace/mambaforge/bin/mamba init bash
+
+SHELL ["/bin/bash", "-c"] 
+RUN source ~./bashrc \
     && mamba create -n rapid -c bioconda perl-bioperl seqtk pyfastaq -y
 
 #
