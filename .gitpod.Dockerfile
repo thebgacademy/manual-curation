@@ -33,11 +33,15 @@ RUN cd /workspace \
 #
 # 6 - Download and install mamba / setup the rapid environment
 #
+RUN unset PROMPT_COMMAND
+
 RUN cd /workspace \
-    && wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh" \
-    && bash Mambaforge-$(uname)-$(uname -m).sh -b -p /workspace/mambaforge \
-    && rm Mambaforge-$(uname)-$(uname -m).sh \
-    && /workspace/mambaforge/bin/mamba init bash \
+    && wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
+
+RUN bash Mambaforge-$(uname)-$(uname -m).sh -b -p /workspace/mambaforge \
+    && rm Mambaforge-$(uname)-$(uname -m).sh
+
+RUN /workspace/mambaforge/bin/mamba init bash \
     && source ~./bashrc \
     && mamba create -n rapid -c bioconda perl-bioperl seqtk pyfastaq -y
 
