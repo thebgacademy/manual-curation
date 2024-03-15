@@ -45,7 +45,7 @@ RUN cd /workspace \
 RUN cd /workspace \
     && /workspace/mambaforge/bin/mamba init bash
 
-RUN ["/bin/bash", "-c", "source ~./bashrc"]
+RUN ["/bin/bash", "-c", "source /home/gitpod/bashrc"]
 
 RUN mamba create -n rapid -c bioconda perl-bioperl seqtk pyfastaq -y
 
@@ -58,7 +58,7 @@ RUN cd /workspace \
 
 RUN echo 'alias ptt="/workspace/mambaforge/bin/python3 /workspace/agp-tpf-utils/src/tola/assembly/scripts/pretext_to_tpf.py"' >> ${HOME}/.bashrc
 
-RUN ["/bin/bash", "-c", "source ~./bashrc"]
+RUN ["/bin/bash", "-c", "source /home/gitpod/bashrc"]
 
 RUN mamba activate rapid
 
