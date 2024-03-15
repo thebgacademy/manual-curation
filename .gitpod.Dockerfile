@@ -47,7 +47,7 @@ RUN cd /workspace \
 
 RUN ["/bin/bash", "-c", "source /home/gitpod/.bashrc"]
 
-RUN ["/bin/bash", "-c", "mamba create -n rapid -c bioconda perl-bioperl seqtk pyfastaq -y"]
+RUN ["/bin/bash", "-c", "/workspace/mambaforge/bin/mamba create -n rapid -c bioconda perl-bioperl seqtk pyfastaq -y"]
 
 #
 # 7 - Change permissions on perl scripts / Add alias for agp tp tpf / activate rapid env
