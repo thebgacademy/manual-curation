@@ -61,14 +61,6 @@ RUN ["/bin/bash", "-c", "source /home/gitpod/.bashrc"]
 
 RUN /workspace/mambaforge/bin/mamba init
 
-#
-# 11 - Print a welcome message
-#
-RUN clear \
-  && echo "Welcome GRIT's curation tutorial" \
-  && echo "typing './PretextView' will run PretextView - Remember to allow pop-ups!" \
-  && echo "'ptt' is the alias for the pretext-to-tpf script!" \
-  && echo " Run this for the tutorial: 'gp preview https://thebgacademy.org/BGA24/sessions/Genome-Curation'" \
-  && echo "---- Have Fun ----"
+
 
   
