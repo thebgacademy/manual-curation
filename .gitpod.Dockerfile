@@ -19,7 +19,7 @@ RUN cd /workspace \
     && wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh" \
     && bash Mambaforge-$(uname)-$(uname -m).sh -b -p /workspace/mambaforge && rm Mambaforge-$(uname)-$(uname -m).sh
 
-RUN /workspace/mamba/bin/mamba init bash \
+RUN /workspace/mambaforge/bin/mamba init bash \
   && source ~./bashrc \
   && mamba create -n rapid -c bioconda perl-bioperl seqtk pyfastaq -y
 
