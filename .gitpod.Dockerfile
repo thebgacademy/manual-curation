@@ -59,7 +59,7 @@ RUN echo 'alias ptt="/workspace/mambaforge/bin/python3 /workspace/agp-tpf-utils/
 
 RUN ["/bin/bash", "-c", "source /home/gitpod/.bashrc"]
 
-RUN /workspace/mambaforge/bin/mamba init bash \
+RUN /workspace/mambaforge/bin/mamba init \
     && /workspace/mambaforge/bin/mamba activate rapid
 
 #
