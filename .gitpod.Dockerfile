@@ -16,7 +16,7 @@ ADD https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_split.pl ./
 ADD https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_join.pl ./
 
 
-RUN tar xzf ./test.tar.gz \
+# RUN tar xzf ./test.tar.gz \
 #    && mv rapid-curation-main-test_data/test_data ./ \
 #    && rm -rf rapid-curation-main-test_data \
 #    && gunzip test_data/*.gz
