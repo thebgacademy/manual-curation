@@ -45,19 +45,22 @@ RUN cd /workspace \
 RUN cd /workspace \
     && /workspace/mambaforge/bin/mamba init bash
 
-SHELL ["/bin/bash", "-c"] 
-RUN source ~./bashrc \
-    && mamba create -n rapid -c bioconda perl-bioperl seqtk pyfastaq -y
+RUN ["/bin/bash", "-c", "source ~./bashrc"]
+
+RUN mamba create -n rapid -c bioconda perl-bioperl seqtk pyfastaq -y
 
 #
 # 7 - Change permissions on perl scripts / Add alias for agp tp tpf / activate rapid env
 #
 RUN cd /workspace \
     && chmod a+x *.pl *.py \
-    && /workspace/mambaforge/bin/mamba init bash \
-    && echo 'alias ptt="/workspace/mambaforge/bin/python3 /workspace/agp-tpf-utils/src/tola/assembly/scripts/pretext_to_tpf.py"' >> ${HOME}/.bashrc \
-    && source ~/.bashrc \
-    && mamba activate rapid
+    && /workspace/mambaforge/bin/mamba init bash
+
+RUN echo 'alias ptt="/workspace/mambaforge/bin/python3 /workspace/agp-tpf-utils/src/tola/assembly/scripts/pretext_to_tpf.py"' >> ${HOME}/.bashrc
+
+RUN ["/bin/bash", "-c", "source ~./bashrc"]
+
+RUN mamba activate rapid
 
 #
 # 8 - Install click and ruff for agp to tpf
