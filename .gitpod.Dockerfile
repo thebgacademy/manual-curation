@@ -53,7 +53,7 @@ RUN ["/bin/bash", "-c", "/workspace/mambaforge/bin/mamba create -n rapid -c bioc
 # 7 - Change permissions on perl scripts / Add alias for agp tp tpf / activate rapid env
 #
 RUN cd /workspace \
-    && chmod a+x *.pl *.py \
+    && chmod a+x *.pl \
     && /workspace/mambaforge/bin/mamba init bash
 
 RUN echo 'alias ptt="/workspace/mambaforge/bin/python3 /workspace/agp-tpf-utils/src/tola/assembly/scripts/pretext_to_tpf.py"' >> ${HOME}/.bashrc
