@@ -54,13 +54,13 @@ RUN ["/bin/bash", "-c", "/workspace/mambaforge/bin/mamba create -n rapid -c bioc
 #
 RUN cd /workspace \
     && chmod a+x *.pl \
-    && /workspace/mambaforge/bin/mamba init bash
 
 RUN echo 'alias ptt="/workspace/mambaforge/bin/python3 /workspace/agp-tpf-utils/src/tola/assembly/scripts/pretext_to_tpf.py"' >> ${HOME}/.bashrc
 
 RUN ["/bin/bash", "-c", "source /home/gitpod/.bashrc"]
 
-RUN /workspace/mambaforge/bin/mamba activate rapid
+RUN /workspace/mambaforge/bin/mamba init bash \
+    && /workspace/mambaforge/bin/mamba activate rapid
 
 #
 # 8 - Install click and ruff for agp to tpf
