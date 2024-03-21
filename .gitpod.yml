@@ -2,6 +2,12 @@ image:
   file: .gitpod.Dockerfile
  
 tasks: 
+- name: COPY COPY
+  command: |
+    mv ../*pl .
+    mv PretextView .
+    mv test_data .
+
 - name: MAIN - TERMINAL TO USE
   command: |
     clear
