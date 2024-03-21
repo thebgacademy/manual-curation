@@ -1,6 +1,7 @@
 image:
   file: .gitpod.Dockerfile
-
+ 
+tasks: 
 - name: MAIN - TERMINAL TO USE
   command: |
     clear
