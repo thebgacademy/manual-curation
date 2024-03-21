@@ -1,4 +1,24 @@
 image:
   file: .gitpod.Dockerfile
 
-workspaceLocation: /workspace
+- name: MAIN - TERMINAL TO USE
+  # Installing click and ruff in the mamba environment didn't work for some reason
+  # It is much easier to install via that mamba env's pip3
+  # and then install pretext-to-tpf
+  init: gp sync-await bundle # Wait for previous 'inits' to complete
+  command: |
+    clear
+    echo "Welcome GRIT's curation tutorial"
+    echo "typing './PretextView' will run PretextView - Remember to allow pop-ups!"
+    echo "'ptt' is the alias for the pretext-to-tpf script!"
+    echo " Run this for the tutorial: 'gp preview https://thebgacademy.org/BGA24/sessions/Genome-Curation'"
+    echo "---- Have Fun ----"
+
+ports:
+  - port: 5900
+    onOpen: ignore
+  - port: 6080
+    onOpen: open-browser
+    visibility: public
+
+workspaceLocation: "/workspace"
