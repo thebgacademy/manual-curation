@@ -2,10 +2,6 @@ image:
   file: .gitpod.Dockerfile
 
 - name: MAIN - TERMINAL TO USE
-  # Installing click and ruff in the mamba environment didn't work for some reason
-  # It is much easier to install via that mamba env's pip3
-  # and then install pretext-to-tpf
-  init: gp sync-await bundle # Wait for previous 'inits' to complete
   command: |
     clear
     echo "Welcome GRIT's curation tutorial"
