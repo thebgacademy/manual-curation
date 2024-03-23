@@ -15,12 +15,14 @@
 			"variant": "Mambaforge"
 		},
 		"ghcr.io/wxw-matt/devcontainer-features/apt:latest": {
-			"packages": "vim curl git wget"
+			"packages": "vim"
         },
 		"ghcr.io/wxw-matt/devcontainer-features/command_runner:latest": {
 			"command1": "wget https://github.com/wtsi-hpag/PretextView/releases/download/0.2.5/PretextView_Linux-x86-64.zip && unzip PretextView_Linux-x86-64.zip",
 			"command2": "mamba create -n rapid -c bioconda perl-bioperl seqtk python=3.10 pyfastaq -y",
-			"command3": "wget https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_split.pl https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_join.pl"
+			"command3": "wget https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_split.pl https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_join.pl",
+			"command4": "curl -L 'https://gitlab.com/wtsi-grit/rapid-curation/-/archive/main/rapid-curation-main.tar.gz?path=test_data' | tar xzf -"
+
 		}
 	},
 
