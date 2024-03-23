@@ -18,11 +18,8 @@
 			"packages": "vim"
         },
 		"ghcr.io/wxw-matt/devcontainer-features/command_runner:latest": {
-			"command1": "wget https://github.com/wtsi-hpag/PretextView/releases/download/0.2.5/PretextView_Linux-x86-64.zip && unzip PretextView_Linux-x86-64.zip",
-			"command2": "mamba create -n rapid -c bioconda perl-bioperl seqtk python=3.10 pyfastaq -y",
-			"command3": "wget https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_split.pl https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_join.pl",
-			"command4": "curl -L 'https://gitlab.com/wtsi-grit/rapid-curation/-/archive/main/rapid-curation-main.tar.gz?path=test_data' | tar xzf -"
-
+			"command1": "mamba create -n rapid -c bioconda perl-bioperl seqtk python=3.10 pyfastaq -y",
+			"command3": "wget https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_split.pl https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_join.pl"
 		}
 	},
 
@@ -41,7 +38,7 @@
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "git clone https://github.com/sanger-tol/agp-tpf-utils.git && pip install click ruff && pip install agp-tpf-utils/ && curl -L 'https://gitlab.com/wtsi-grit/rapid-curation/-/archive/main/rapid-curation-main.tar.gz?path=test_data' | tar xzf -"
+	"postCreateCommand": "git clone https://github.com/sanger-tol/agp-tpf-utils.git && pip install click ruff && pip install agp-tpf-utils/ && curl -L 'https://gitlab.com/wtsi-grit/rapid-curation/-/archive/main/rapid-curation-main.tar.gz?path=test_data' | tar xzf - && wget https://github.com/wtsi-hpag/PretextView/releases/download/0.2.5/PretextView_Linux-x86-64.zip https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_split.pl https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_join.pl && unzip PretextView_Linux-x86-64.zip &&"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
