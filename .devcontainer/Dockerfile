@@ -10,7 +10,6 @@ RUN wget https://gitlab.com/wtsi-grit/rapid-curation/-/raw/main/rapid_split.pl \
 
 RUN git clone https://github.com/sanger-tol/agp-tpf-utils.git
 
-# "postCreateCommand": "/opt/conda/envs/rapid/bin/pip3 install click ruff && /opt/conda/envs/rapid/bin/pip3 install ../../agp-tpf-utils/ && unzip ../../PretextView_Linux-x86-64.zip &&"
 # add a small script to do the welcome message?
 
 # mamba activate rapid just has to be run in the users terminal
