@@ -44,5 +44,7 @@
 		}
 	},
 
-	"postCreateCommand": "/opt/conda/envs/rapid/bin/pip3 install click ruff && sudo /opt/conda/envs/rapid/bin/pip3 install --editable ../../agp-tpf-utils/ && unzip ../../PretextView_Linux-x86-64.zip && tar xzf ../../rapid-curation-main.tar.gz && mv ./rapid-curation-main-test_data/test_data ./ && rm -rf rapid-curation-main-test_data && gunzip test_data/*.gz && alias ptt='python3 /agp-tpf-utils/src/tola/assembly/scripts/pretext_to_tpf.py'"
+	"postCreateCommand": "/opt/conda/envs/rapid/bin/pip3 install click ruff && sudo /opt/conda/envs/rapid/bin/pip3 install --editable ../../agp-tpf-utils/ && unzip ../../PretextView_Linux-x86-64.zip && tar xzf ../../rapid-curation-main.tar.gz && mv ./rapid-curation-main-test_data/test_data ./ && rm -rf rapid-curation-main-test_data && gunzip test_data/*.gz && alias ptt='python3 /agp-tpf-utils/src/tola/assembly/scripts/pretext_to_tpf.py'",
+
+	"postAttachCommand": "bash welcome.sh"
 }
