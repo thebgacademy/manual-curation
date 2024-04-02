@@ -40,5 +40,8 @@
 			"label": "VNC TCP port (password: vscode)",
 			"onAutoForward": "silent"
 		}
-	}
+	},
+
+	"postCreateCommand": "/opt/conda/envs/rapid/bin/pip3 install click ruff && sudo /opt/conda/envs/rapid/bin/pip3 install ../../agp-tpf-utils/ && unzip ../../PretextView_Linux-x86-64.zip"
+
 }
