@@ -25,26 +25,24 @@
         },
 		"ghcr.io/wxw-matt/devcontainer-features/command_runner:latest": {
 			"command1": "mamba create -n rapid -c bioconda perl-bioperl seqtk python=3.10 pyfastaq -y",
+			"command2": "/opt/conda/envs/rapid/bin/pip3 install click ruff",
+			"command3": "sudo /opt/conda/envs/rapid/bin/pip3 install --root-user-action ignore --editable /agp-tpf-utils/" 
 		}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
-		6080, 8321
+		6080
 	],
 
 	"portsAttributes": {
 		"6080": {
 			"label": "Desktop access (password: vscode)",
 			"onAutoForward": "silent"
-		},
-		"5901": {
-			"label": "VNC TCP port (password: vscode)",
-			"onAutoForward": "silent"
 		}
 	},
 
-	"postCreateCommand": "/opt/conda/envs/rapid/bin/pip3 install click ruff && sudo /opt/conda/envs/rapid/bin/pip3 install --editable ../../agp-tpf-utils/ && unzip ../../PretextView_Linux-x86-64.zip && tar xzf ../../rapid-curation-main.tar.gz && mv ./rapid-curation-main-test_data/test_data ./ && rm -rf rapid-curation-main-test_data && gunzip test_data/*.gz && alias ptt='python3 /agp-tpf-utils/src/tola/assembly/scripts/pretext_to_tpf.py'",
+	"postCreateCommand": "unzip ../../PretextView_Linux-x86-64.zip && tar xzf ../../rapid-curation-main.tar.gz && mv rapid-curation-main-test_data/test_data ./ && rm -rf rapid-curation-main-test_data && gunzip test_data/*.gz",
 
 	"postAttachCommand": "bash welcome.sh"
 }
