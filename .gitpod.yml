@@ -8,7 +8,7 @@ tasks:
     mv rapid-curation-main-test_data/test_data ./
     rmdir rapid-curation-main-test_data
     gunzip test_data/*.gz
-    
+
 - name: SETUP - Download PretextView
   init: |
     cd /workspace
@@ -52,12 +52,9 @@ tasks:
     /workspace/mambaforge/bin/pip3 install click ruff
     /workspace/mambaforge/bin/python3 -m pip install agp-tpf-utils/
     export PATH=/workspace:$PATH
+    gp preview https://www.thebgacademy.org/BGA24/sessions/Genome-Curation
     clear
-    echo "Welcome GRIT's curation tutorial"
-    echo "typing './PretextView' will run PretextView - Remember to allow pop-ups!"
-    echo "'ptt' is the alias for the pretext-to-tpf script!"
-    echo " Run this for the tutorial: 'gp preview https://thebgacademy.org/BGA24/sessions/Genome-Curation'"
-    echo "---- Have Fun ----"
+    bash welcome.sh
 
 ports:
   - port: 5900
