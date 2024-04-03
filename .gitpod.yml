@@ -54,7 +54,7 @@ tasks:
     export PATH=/workspace:$PATH
     gp preview https://www.thebgacademy.org/BGA24/sessions/Genome-Curation
     clear
-    bash welcome.sh
+    bash manual-curation/welcome.sh
 
 ports:
   - port: 5900
