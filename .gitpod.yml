@@ -57,8 +57,6 @@ tasks:
     bash manual-curation/welcome.sh
 
 ports:
-  - port: 5900
-    onOpen: ignore
   - port: 6080
     onOpen: open-browser
     visibility: public
