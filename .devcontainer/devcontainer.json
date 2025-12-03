@@ -16,17 +16,14 @@
 			"webPort": "6080",
 			"vncPort": "5901"
 		},
-		"ghcr.io/rocker-org/devcontainer-features/miniforge:1": {
-			"version": "latest",
-			"variant": "Mambaforge"
-		},
+		"ghcr.io/devcontainers/features/conda:1": {},
 		"ghcr.io/wxw-matt/devcontainer-features/apt:latest": {
 			"packages": "vim"
         },
 		"ghcr.io/wxw-matt/devcontainer-features/command_runner:latest": {
-			"command1": "mamba create -n rapid -c bioconda perl-bioperl seqtk python=3.10 pyfastaq -y",
-			"command2": "/opt/conda/envs/rapid/bin/pip3 install click ruff",
-			"command3": "sudo /opt/conda/envs/rapid/bin/pip3 install --root-user-action ignore --editable /agp-tpf-utils/" 
+			"command1": "conda create -n rapid -c bioconda -c conda-forge perl-bioperl seqtk python=3.13 pyfastaq -y",
+			"command2": "/opt/conda/envs/rapid/bin/pip3 install click ruff uv",
+			"command3": "/opt/conda/envs/rapid/bin/uv tool install 'git+https://github.com/sanger-tol/agp-tpf-utils'" 
 		}
 	},
 
