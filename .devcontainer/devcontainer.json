@@ -22,8 +22,7 @@
         },
 		"ghcr.io/wxw-matt/devcontainer-features/command_runner:latest": {
 			"command1": "conda create -n rapid -c bioconda -c conda-forge perl-bioperl seqtk python=3.13 pyfastaq -y",
-			"command2": "/opt/conda/envs/rapid/bin/pip3 install click ruff uv",
-			"command3": "/opt/conda/envs/rapid/bin/uv tool install 'git+https://github.com/sanger-tol/agp-tpf-utils'" 
+			"command2": "/opt/conda/envs/rapid/bin/pip3 install click ruff 'git+https://github.com/sanger-tol/agp-tpf-utils'"
 		}
 	},
 
@@ -39,7 +38,6 @@
 		}
 	},
 
-	"postCreateCommand": "unzip ../../PretextView_Linux-x86-64.zip && tar xzf ../../rapid-curation-main.tar.gz && mv rapid-curation-main-test_data/test_data ./ && rm -rf rapid-curation-main-test_data && gunzip test_data/*.gz",
-
-	"postAttachCommand": "bash welcome.sh"
+	"postCreateCommand": "tar xzf ../../rapid-curation-main.tar.gz && mv rapid-curation-main-test_data/test_data ./ && rm -rf rapid-curation-main-test_data && gunzip test_data/*.gz",
+	"postAttachCommand": "conda init && source ~/.bashrc && conda activate rapid && bash welcome.sh"
 }
