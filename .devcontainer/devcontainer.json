@@ -33,7 +33,7 @@
 
 	"portsAttributes": {
 		"6080": {
-			"label": "Desktop access (password: vscode)",
+			"label": "Desktop access",
 			"onAutoForward": "silent"
 		}
 	},
