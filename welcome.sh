@@ -24,6 +24,8 @@ cat << EOF
  
  Run PretextView it self with:              "./PretextView &"
 
+ Access the Desktop via the ports tab! If it requests a password, it is "password".
+
  The & will make life easier, and try to run it in the VScode window if possible, 
  this will stop any issues with time out.
 --------------------------------------------------------------------------------------------
