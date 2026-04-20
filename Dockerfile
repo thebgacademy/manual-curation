@@ -41,20 +41,21 @@ if [ -f /opt/mambaforge/etc/profile.d/conda.sh ]; then
 fi
 EOF
 
+
 # Show the welcome message for interactive shells and provide an alias 'ptt'
 RUN set -eux; \
-    cat > /home/kasm_user/manual_curation_welcome.sh <<'EOF'
+    cat > /home/kasm-user/manual_curation_welcome.sh <<'EOF'
 # Show welcome and setup alias when a user opens an interactive shell
 if [ -n "$PS1" ]; then
   # Alias to run pretext_to_tpf from the mounted workspace (if present)
   git clone https://github.com/sanger-tol/agp-tpf-utils.git /home/kasm_user/agp-tpf-utils/
   alias ptt="/opt/mambaforge/bin/python3 /home/kasm_user/agp-tpf-utils/src/tola/assembly/scripts/pretext_to_tpf.py"
-  if [ -x /home/kasm_user/welcome.sh ]; then
-    /home/kasm_user/welcome.sh
+  if [ -x /home/kasm-user/welcome.sh ]; then
+    /home/kasm-user/welcome.sh
   fi
 fi
 EOF
-RUN chmod 644 /home/kasm_user/manual_curation_welcome.sh || true
+RUN chmod 644 /home/kasm-user/manual_curation_welcome.sh || true
 
 
 ##### Welcome script
