@@ -93,3 +93,17 @@ N.B. rapid_join.pl can also be used to output a fasta file of the haplotigs by r
 ```
 
 ### Step 8. Normally after this one should re-map the HiC data to the new fasta file and check no errors were made or anything was missed in the first curation effort. We unfortunately do not have time for this during this practical. 
+
+## The Docker Container
+If you can't use the KASM system, then the container can be used locally with the provided docker-compose.yml.
+
+Simply download the github repo with:
+```
+git clone https://github.com/thebgacademy/manual-curation.git -c kasm-testing
+
+cd manual-curation
+
+docker-compose up
+```
+
+Unfortunately, this requires non-Apple systems.

@@ -1,18 +1,17 @@
 FROM kasmweb/fedora-40-desktop:1.17.0
 USER root
-
 ENV HOME="/home/kasm-default-profile"
 ENV STARTUPDIR="/dockerstartup"
 ENV INST_SCRIPTS="$STARTUPDIR/install"
 WORKDIR $HOME
 
-
 ##### Customise container
 
 ARG TARGETARCH
 ARG VERSION=2.5.0
-
 LABEL org.opencontainers.image.source=https://github.com/thebgacademy/manual-curation
+LABEL org.opencontainers.image.description="The Genome Reference Informatics Team's manual curation tutorial container built with KASM"
+LABEL org.opencontainers.image.vendor="The Biodiversity Genomics Academy (BGA)"
 
 SHELL ["/bin/bash", "-c"]
 
