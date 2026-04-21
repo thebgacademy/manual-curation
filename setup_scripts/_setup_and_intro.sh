@@ -13,7 +13,9 @@ tar -xzf /home/kasm-user/rapid-curation-main.tar.gz
 echo "Setting up AGP-TPF-utils..."
 git clone https://github.com/sanger-tol/agp-tpf-utils.git /home/kasm-user/agp-tpf-utils/
 cd /home/kasm-user/agp-tpf-utils/
-uv pip install ./
+
+# Install AGP-TPF-utils system-wide or it will fail due to no venv
+uv pip install ./ --system
 cd /home/kasm-user/
 
 

@@ -46,6 +46,12 @@ By the end of this session you will be able to:
 
 These instructions will guide you through the processing step for the files related to ilThyBati1
 
+### Step 0. Setup the container
+
+Almost everything will be setup once you open your KASM container.
+
+However, we need to finish setting up mamba, so the first thing you should do is open the `terminal` and type `bash _setup_and_intro.sh`. This will run a small bash script to finalise the conda environment, untar the test data as well as install agp-tpf-utils.
+
 ### Step 1. Run rapid_split on your decontaminated, pre-curation fasta file to create a tpf
 
 ```
