@@ -31,12 +31,8 @@ RUN unzip PretextView_Linux-x86-64.zip
 COPY setup_scripts/_intro.sh /home/kasm-user
 COPY setup_scripts/_setup_and_intro.sh /home/kasm-user
 COPY setup_scripts/_download_micromamba.sh /home/kasm-user
-COPY setup_scripts/terminal_start.sh /home/kasm-user
-
-COPY setup_scripts/autostart_terminal.desktop /etc/xdg/autostart/autostart_terminal.desktop
 
 RUN /home/kasm-user/_download_micromamba.sh
-CMD ["/bin/bash","-lc","xfce4-terminal --hold --command=\"/bin/bash -lc '/home/kasm-user/setup_and_intro.sh'\""]
 
 ##### EO Customisations
 RUN chown 1000:0 $HOME

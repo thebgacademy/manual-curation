@@ -2,8 +2,10 @@
 set -euo pipefail
 
 echo "Setting up environment..."
-micromamba create -n curation python uv -y
-micromamba activate curation
+micromamba shell init -s bash -r ~/micromamba
+source ~/.bashrc
+micromamba activate
+micromamba install python=3.14 uv -y
 
 echo "Setting up test data..."
 tar -xzf /home/kasm-user/rapid-curation-main.tar.gz
