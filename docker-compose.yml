@@ -1,0 +1,15 @@
+services:
+  manual-curation:
+    container_name: manual-curation-BGA
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - TARGETARCH=${TARGETARCH:-amd64}
+        - VERSION=${VERSION:-2.5.0}
+    image: local/manual-curation:${TARGETARCH:-amd64}
+    ports:
+      - "6902:6901"
+    environment:
+      - VNC_PW=${VNC_PASSWORD}
+    shm_size: 512m
