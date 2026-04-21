@@ -2,8 +2,11 @@
 set -euo pipefail
 
 echo "Setting up environment..."
-mamba create -n curation python uv -y
-mamba activate curation
+micromamba create -n curation python uv -y
+micromamba activate curation
+
+echo "Setting up test data..."
+tar -xzf /home/kasm-user/rapid-curation-main.tar.gz
 
 echo "Setting up AGP-TPF-utils..."
 git clone https://github.com/sanger-tol/agp-tpf-utils.git /home/kasm-user/agp-tpf-utils/

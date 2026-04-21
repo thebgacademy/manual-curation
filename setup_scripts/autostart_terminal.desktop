@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Manual Curation Setup
+Exec=/home/kasm-user/run_setup_in_terminal.sh
+Comment=Open terminal and run manual curation first-run setup
+OnlyShowIn=XFCE;
+Terminal=false
+X-GNOME-Autostart-enabled=true
