@@ -22,7 +22,8 @@
         },
 		"ghcr.io/wxw-matt/devcontainer-features/command_runner:latest": {
 			"command1": "conda create -n rapid -c bioconda -c conda-forge perl-bioperl seqtk python=3.13 pyfastaq -y",
-			"command2": "/opt/conda/envs/rapid/bin/pip3 install click ruff 'git+https://github.com/sanger-tol/agp-tpf-utils'"
+			"command2": "/opt/conda/envs/rapid/bin/pip3 install click ruff 'git+https://github.com/sanger-tol/agp-tpf-utils'",
+			"command3": "curl -L 'https://gitlab.com/wtsi-grit/rapid-curation/-/archive/main/rapid-curation-main.tar.gz?path=test_data' -o rapid-curation-main.tar.gz"
 		}
 	},
 
